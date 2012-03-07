@@ -1,0 +1,10 @@
+*~
+*.LCK
+*_flymake.*
+\#*
+.\#*
+.bundle
+.DS_Store
+vendor/bundle
+tmp
+*.pid
