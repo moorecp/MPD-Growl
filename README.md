@@ -37,23 +37,23 @@ The growlnotify method uses the `growlnotify` application ([info here](http://gr
 MPD_Growl uses [Daemons](http://daemons.rubyforge.org/) to simplify running the script as a long running, background process. To start the script, simply run:
 
 ``` ruby
-ruby mpd.rb start
+ruby mpd_growl.rb start
 ```
 
 You can stop the process by running:
 
 ``` ruby
-ruby mpd.rb stop
+ruby mpd_growl.rb stop
 ```
 
 You can restart a running process by running:
 
 ``` ruby
-ruby mpd.rb restart
+ruby mpd_growl.rb restart
 ```
 
 Finally, you can also run the script in the foreground by running:
 
 ``` ruby
-ruby mpd.rb run
+ruby mpd_growl.rb run
 ```
