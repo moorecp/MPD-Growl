@@ -26,7 +26,7 @@ The ruby-growl method uses the `ruby-growl` gem to communicate with Growl via th
 > 
 > Allow remote application registration
 
-Both of there can be found in your Growl->Network settings pane.
+Both of these can be found in your Growl->Network settings pane.
 
 If you have required a password for connecting to your Growl server, set it via the config setting `growl_password`.
 
