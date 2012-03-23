@@ -1,5 +1,6 @@
 config:
-        mpd_host:     localhost
-        mpd_port:     6600
-        growl_host:   localhost
-        growl_method: ruby-growl # Possible values are ruby-growl and growlnotifier
+        mpd_host:       localhost
+        mpd_port:       6600
+        growl_method:   ruby-growl # Possible values are ruby-growl and growlnotifier
+        growl_host:     localhost  # only needed for ruby-growl
+        growl_password:            # only needed for ruby-growl and if you require a password for remote Growl notifications

@@ -28,6 +28,7 @@ The ruby-growl method uses the `ruby-growl` gem to communicate with Growl via th
 
 Both of there can be found in your Growl->Network settings pane.
 
+If you have required a password for connecting to your Growl server, set it via the config setting `growl_password`.
 
 #### growlnotify
 The growlnotify method uses the `growlnotify` application ([info here](http://growl.info/extras.php)) that is included with Growl. It does not require setting any of the Network options that `ruby-growl` does.
