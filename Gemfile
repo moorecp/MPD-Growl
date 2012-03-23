@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'bundler', '=1.0.22'
+gem 'bundler', '=1.1.2'
 
 group :app do
   gem 'librmpd',    '=0.1.1'
