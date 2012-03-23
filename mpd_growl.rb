@@ -32,7 +32,9 @@ class MPDClient
 end
 
 def load_config
-	config = YAML.load_file(File.join(File.expand_path(File.dirname(__FILE__)), "config.yaml"))
+  config = { "config" => { } }
+  config_file = File.join(File.expand_path(File.dirname(__FILE__)), "config.yaml")
+	config = YAML.load_file(config_file) if File.exists?(config_file)
 	@mpd_host     = config["config"]["mpd_host"]     || 'localhost'
 	@mpd_port     = config["config"]["mpd_port"]     || 6600
   @growl_host   = config["config"]["growl_host"]   || 'localhost'
