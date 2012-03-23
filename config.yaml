@@ -1,0 +1,5 @@
+config:
+        mpd_host:     localhost
+        mpd_port:     6600
+        growl_host:   localhost
+        growl_method: ruby-growl # Possible values are ruby-growl and growlnotifier
