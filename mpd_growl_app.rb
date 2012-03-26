@@ -34,17 +34,17 @@ end
 def load_config
   config = { "config" => { } }
   config_file = File.join(File.expand_path(File.dirname(__FILE__)), "config.yaml")
-	config = YAML.load_file(config_file) if File.exists?(config_file)
+  config = YAML.load_file(config_file) if File.exists?(config_file)
 
-	@mpd_host       = config["config"]["mpd_host"]       || 'localhost'
-	@mpd_port       = config["config"]["mpd_port"]       || 6600
+  @mpd_host       = config["config"]["mpd_host"]       || 'localhost'
+  @mpd_port       = config["config"]["mpd_port"]       || 6600
   @growl_method   = config["config"]["growl_method"]   || MPDClient::GROWL_METHODS[:ruby]
   @growl_host     = config["config"]["growl_host"]     || 'localhost'
   @growl_password = config["config"]["growl_password"] # We want this to be nil if there is no password
 end
 
 load_config
-mpd = MPD.new(@mpd_host, @mpd_port)
+mpd    = MPD.new(@mpd_host, @mpd_port)
 client = MPDClient.new(mpd, @growl_method, @growl_host, @growl_password)
 
 mpd.register_callback(client.method('current_song_callback'), MPD::CURRENT_SONG_CALLBACK)
