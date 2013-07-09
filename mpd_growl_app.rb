@@ -18,9 +18,10 @@ class MPDClient
   def current_song_callback(song)
     self.first_run = false
     if song
+      notification_body = song.title.nil? ? song.file.slice((song.file.rindex('/') + 1)..-1) : "#{song.artist}\n#{song.album}"
       case self.growl_method
-      when GROWL_METHODS[:growlnotify] then system(%(growlnotify -n "MPD Growl" -a iTunes -t "#{song.title}" -m "#{song.artist}\n#{song.album}"))
-      when GROWL_METHODS[:ruby] then self.growl.notify(NOTIFICATION_TYPES[:song_change], song.title, "#{song.artist}\n#{song.album}")
+      when GROWL_METHODS[:growlnotify] then system(%(growlnotify -n "MPD Growl" -a iTunes -t "#{song.title}" -m "#{notification_body}"))
+      when GROWL_METHODS[:ruby] then self.growl.notify(NOTIFICATION_TYPES[:song_change], song.title, notification_body)
       end
     end
   end
